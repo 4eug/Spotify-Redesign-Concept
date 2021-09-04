@@ -1,4 +1,4 @@
-# Weather App
+# Spotify-Redesign-Concept
 
 A Flutter project.
 UI Designed by Chidalu Ugwu
@@ -19,4 +19,5 @@ Dribbble :https://dribbble.com/shots/12600010-Spotify-Redesign-Concept/attachmen
 <img src="assets/screenshots/flutter_02.jpeg/" height="500em" />
 </td>
 </table> -->
-"# Spotify-Redesign-Concept" 
+
+"# Spotify-Redesign-Concept"
