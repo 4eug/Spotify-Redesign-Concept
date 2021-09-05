@@ -30,8 +30,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           Column(
             children: [
-              Padding(
-                  padding: EdgeInsets.symmetric(vertical: 30, horizontal: 10)),
+              Padding(padding: EdgeInsets.all(30)),
               Center(
                 child: Text(
                   "Search",
