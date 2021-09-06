@@ -14,38 +14,42 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
-        child: Stack(children: <Widget>[
-          Container(
-            color: Colors.black87,
-            width: double.infinity,
-            child: Opacity(
-              opacity: 0.1,
-              child: Image.asset(
-                StyleGuide.searchBackground,
-                height: 1000,
-                width: 100,
-                fit: BoxFit.fitHeight,
-              ),
-            ),
-          ),
-          Column(
-            children: [
-              Padding(padding: EdgeInsets.all(30)),
-              Center(
-                child: Text(
-                  "Search",
-                  style: TextStyle(
-                    fontSize: 35,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w400,
-                  ),
+        child: Stack(
+          children: <Widget>[
+            Container(
+              color: Colors.black87,
+              width: double.infinity,
+              child: Opacity(
+                opacity: 0.1,
+                child: Image.asset(
+                  StyleGuide.searchBackground,
+                  height: 1000,
+                  width: 100,
+                  fit: BoxFit.fitHeight,
                 ),
               ),
-              SizedBox(height: 40),
-              _searchBar()
-            ],
-          ),
-        ]),
+            ),
+            Column(
+              children: [
+                Padding(padding: EdgeInsets.all(30)),
+                Center(
+                  child: Text(
+                    "Search",
+                    style: TextStyle(
+                      fontSize: 35,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+                _searchBar(),
+                SizedBox(height: 520),
+                bottomNavBar()
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -53,53 +57,47 @@ class _SearchPageState extends State<SearchPage> {
 
 Widget _searchBar() {
   return Container(
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.all(
-        Radius.circular(50),
+      width: 350,
+      padding: EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        color: Colors.grey[400],
+        borderRadius: BorderRadius.circular(10),
       ),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black,
-          blurRadius: 25,
-          offset: Offset(0, 5),
-          spreadRadius: -25,
-        ),
-      ],
-    ),
-    margin: EdgeInsets.only(bottom: 20),
-    child: TextField(
-      style: TextStyle(
-          fontSize: 20,
-          color: Colors.black,
-          letterSpacing: 0.24,
-          fontWeight: FontWeight.w500),
-      decoration: InputDecoration(
-        hintText: "Email address",
-        hintStyle: TextStyle(
-          color: Color(0xffA6B0BD),
-        ),
-        fillColor: Colors.white,
-        filled: true,
-        suffixIcon: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Icon(
-            Icons.search,
-            color: Colors.greenAccent,
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(1),
-          ),
-          borderSide: BorderSide(color: Colors.white),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(1),
-          ),
-          borderSide: BorderSide(color: Colors.white),
-        ),
-      ),
-    ),
-  );
+      child: TextField(
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              prefixIcon: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              hintText: "Artists, songs or podcasts",
+              hintStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ))));
+}
+
+Widget bottomNavBar() {
+  return Align(
+      alignment: Alignment.bottomCenter,
+      child: BottomNavigationBar(
+        backgroundColor:
+            Colors.black.withOpacity(0.1), //here set your transparent level
+        elevation: 0,
+        selectedItemColor: Colors.blueAccent,
+        unselectedItemColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: 0,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications_none, size: 30),
+              title: Text('Notifications')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search, size: 30), title: Text('Search')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.perm_identity, size: 30), title: Text('User'))
+        ],
+      ));
 }
