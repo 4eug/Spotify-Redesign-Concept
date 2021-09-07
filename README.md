@@ -1,11 +1,8 @@
-# Spotify-Redesign-Concept
+# UI-Design-Clone
 
 A Flutter project.
-UI Designed by Chidalu Ugwu
 
-Dribbble :https://dribbble.com/shots/12600010-Spotify-Redesign-Concept/attachments/4202285?mode=media
-
-## UI Design
+## Flutter Screenshots
 
 <!-- <img src="assets/ui/WeatherUi.jpg" height="500em" /> -->
 

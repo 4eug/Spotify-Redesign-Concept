@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_redesign_concept_by_chidalu/widgets/bottomNavbar.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/constants.dart';
 // import 'package:spotify_redesign_concept_by_chidalu/widgets/constants.dart';
 
@@ -26,7 +27,7 @@ class _SearchPageState extends State<SearchPage> {
                   StyleGuide.searchBackground,
                   height: 1000,
                   width: 100,
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -35,28 +36,7 @@ class _SearchPageState extends State<SearchPage> {
                 child: Theme(
                     data: Theme.of(context)
                         .copyWith(canvasColor: Colors.transparent),
-                    child: BottomNavigationBar(
-                      backgroundColor: Colors.black
-                          .withOpacity(0.1), //here set your transparent level
-                      elevation: 0,
-                      selectedItemColor: Colors.white,
-                      unselectedItemColor: Colors.white,
-                      type: BottomNavigationBarType.fixed,
-                      currentIndex: 0,
-                      showSelectedLabels: false,
-                      showUnselectedLabels: false,
-                      items: [
-                        BottomNavigationBarItem(
-                            icon: Icon(Icons.notifications_none, size: 30),
-                            title: Text('Notifications')),
-                        BottomNavigationBarItem(
-                            icon: Icon(Icons.search, size: 30),
-                            title: Text('Search')),
-                        BottomNavigationBarItem(
-                            icon: Icon(Icons.perm_identity, size: 30),
-                            title: Text('User'))
-                      ],
-                    ))),
+                    child: BottomNavbar())),
             Column(
               children: [
                 Padding(padding: EdgeInsets.all(30)),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_redesign_concept_by_chidalu/widgets/bottomNavbar.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/constants.dart';
+import 'package:spotify_redesign_concept_by_chidalu/widgets/section.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/squarecards.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/squarecirclecards.dart';
 
@@ -46,23 +48,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 20,
                   ),
-                  // Container(
-                  //   padding: EdgeInsets.all(5),
-                  //   decoration: BoxDecoration(
-                  //       color: Color.fromRGBO(244, 243, 243, 1),
-                  //       borderRadius: BorderRadius.circular(15)),
-                  //   child: TextField(
-                  //     decoration: InputDecoration(
-                  //         border: InputBorder.none,
-                  //         prefixIcon: Icon(
-                  //           Icons.search,
-                  //           color: Colors.black87,
-                  //         ),
-                  //         hintText: "Search you're looking for",
-                  //         hintStyle:
-                  //             TextStyle(color: Colors.grey, fontSize: 15)),
-                  //   ),
-                  // ),
+                  SectionBar(),
                   SizedBox(
                     height: 10,
                   ),
@@ -139,6 +125,12 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+        Align(
+            alignment: Alignment.bottomCenter,
+            child: Theme(
+                data:
+                    Theme.of(context).copyWith(canvasColor: Colors.transparent),
+                child: BottomNavbar()))
       ]),
     );
   }
