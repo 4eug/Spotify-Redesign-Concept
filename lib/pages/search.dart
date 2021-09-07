@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/constants.dart';
+// import 'package:spotify_redesign_concept_by_chidalu/widgets/constants.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key key}) : super(key: key);
@@ -11,16 +12,16 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        child: Stack(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Stack(
           children: <Widget>[
             Container(
               color: Colors.black87,
               width: double.infinity,
               child: Opacity(
-                opacity: 0.1,
+                opacity: 0.3,
                 child: Image.asset(
                   StyleGuide.searchBackground,
                   height: 1000,
@@ -29,6 +30,33 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ),
             ),
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: Theme(
+                    data: Theme.of(context)
+                        .copyWith(canvasColor: Colors.transparent),
+                    child: BottomNavigationBar(
+                      backgroundColor: Colors.black
+                          .withOpacity(0.1), //here set your transparent level
+                      elevation: 0,
+                      selectedItemColor: Colors.white,
+                      unselectedItemColor: Colors.white,
+                      type: BottomNavigationBarType.fixed,
+                      currentIndex: 0,
+                      showSelectedLabels: false,
+                      showUnselectedLabels: false,
+                      items: [
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.notifications_none, size: 30),
+                            title: Text('Notifications')),
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.search, size: 30),
+                            title: Text('Search')),
+                        BottomNavigationBarItem(
+                            icon: Icon(Icons.perm_identity, size: 30),
+                            title: Text('User'))
+                      ],
+                    ))),
             Column(
               children: [
                 Padding(padding: EdgeInsets.all(30)),
@@ -44,8 +72,6 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                 SizedBox(height: 40),
                 _searchBar(),
-                SizedBox(height: 520),
-                bottomNavBar()
               ],
             ),
           ],
@@ -60,7 +86,7 @@ Widget _searchBar() {
       width: 350,
       padding: EdgeInsets.all(2),
       decoration: BoxDecoration(
-        color: Colors.grey[400],
+        color: Colors.grey[800],
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextField(
@@ -75,29 +101,4 @@ Widget _searchBar() {
                 color: Colors.white,
                 fontSize: 18,
               ))));
-}
-
-Widget bottomNavBar() {
-  return Align(
-      alignment: Alignment.bottomCenter,
-      child: BottomNavigationBar(
-        backgroundColor:
-            Colors.black.withOpacity(0.1), //here set your transparent level
-        elevation: 0,
-        selectedItemColor: Colors.blueAccent,
-        unselectedItemColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: 0,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_none, size: 30),
-              title: Text('Notifications')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.search, size: 30), title: Text('Search')),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.perm_identity, size: 30), title: Text('User'))
-        ],
-      ));
 }
