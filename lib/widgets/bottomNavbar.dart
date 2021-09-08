@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_redesign_concept_by_chidalu/routes/routes.dart';
 
 class BottomNavbar extends StatelessWidget {
   const BottomNavbar({Key key}) : super(key: key);
@@ -29,7 +30,10 @@ class BottomNavbar extends StatelessWidget {
             height: 50,
             // ignore: deprecated_member_use
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil(searchRoute, (route) => false);
+              },
               shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
               ),

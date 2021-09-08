@@ -1,18 +1,15 @@
 # UI-Design-Clone
 
 A Flutter project.
+just for fun project
 
 ## Flutter Screenshots
 
-<!-- <img src="assets/ui/WeatherUi.jpg" height="500em" /> -->
-
-<!-- ## Screenshots form Device -->
-
-<!-- <table>
+<table>
 <td>
-<img src="assets/screenshots/flutter_01.jpeg/" height="500em" />
+<img src="assets/images/flutter_01.jpeg/" height="500em" />
 </td>
 <td>
-<img src="assets/screenshots/flutter_02.jpeg/" height="500em" />
+<img src="assets/images/flutter_02.jpeg/" height="500em" />
 </td>
-</table> -->
+</table>

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/bottomNavbar.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/constants.dart';
-import 'package:spotify_redesign_concept_by_chidalu/widgets/section.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/squarecards.dart';
 import 'package:spotify_redesign_concept_by_chidalu/widgets/squarecirclecards.dart';
 
@@ -35,24 +34,23 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    'Good evening 🌩',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.w300),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  SectionBar(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Good evening 🌩',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 20,
@@ -69,11 +67,8 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
-                      height: 5,
-                    ),
                     Text(
-                      'played',
+                      'posted',
                       style: TextStyle(
                           fontSize: 30,
                           color: Colors.white,
@@ -98,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                       height: 20,
                     ),
                     Text(
-                      'Podcasts',
+                      'Popular',
                       style: TextStyle(
                           fontSize: 30,
                           color: Colors.white,

@@ -19,10 +19,11 @@ class SectionBar extends StatelessWidget {
                 borderRadius: new BorderRadius.circular(10.0),
               ),
               child: Icon(
-                Icons.home,
+                Icons.favorite,
                 size: 30,
                 color: Colors.white,
               ),
+              color: Colors.blueGrey.withOpacity(0.9),
             )),
         Container(
             width: 50,
